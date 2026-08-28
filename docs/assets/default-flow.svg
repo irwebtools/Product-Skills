@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="560" viewBox="0 0 560 560" role="img" aria-labelledby="title desc">
+  <title id="title">Product-Skills default flow</title>
+  <desc id="desc">Definition flows to UX and UI, React, Verify, and Delivery.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#596579"/>
+    </marker>
+  </defs>
+
+  <rect width="560" height="560" fill="#f7f6f2"/>
+
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" fill="#2d3142">
+    <text x="52" y="44" font-size="12" font-weight="700" letter-spacing="1.8" fill="#7a8399">DEFAULT FLOW</text>
+    <line x1="52" y1="58" x2="508" y2="58" stroke="#2d3142" stroke-opacity=".12"/>
+
+    <line x1="102" y1="102" x2="102" y2="458" stroke="#596579" stroke-opacity=".34" stroke-width="1.2"/>
+
+    <g transform="translate(82 82)">
+      <circle cx="20" cy="20" r="20" fill="#ffffff" stroke="#2d3142" stroke-opacity=".16"/>
+      <text x="20" y="25" text-anchor="middle" font-size="14" font-weight="700">1</text>
+      <text x="62" y="25" font-size="21" font-weight="650">Definition</text>
+      <text x="62" y="46" font-size="12" fill="#7a8399">goal · actors · rules · acceptance</text>
+    </g>
+
+    <g transform="translate(82 170)">
+      <circle cx="20" cy="20" r="20" fill="#ffffff" stroke="#2d3142" stroke-opacity=".16"/>
+      <text x="20" y="25" text-anchor="middle" font-size="14" font-weight="700">2</text>
+      <text x="62" y="25" font-size="21" font-weight="650">UX / UI</text>
+      <text x="62" y="46" font-size="12" fill="#7a8399">journey · hierarchy · responsive states</text>
+    </g>
+
+    <g transform="translate(82 258)">
+      <circle cx="20" cy="20" r="20" fill="#fff7f2" stroke="#eb6c36"/>
+      <text x="20" y="25" text-anchor="middle" font-size="14" font-weight="750" fill="#eb6c36">3</text>
+      <text x="62" y="25" font-size="21" font-weight="650">React</text>
+      <text x="62" y="46" font-size="12" fill="#7a8399">TypeScript · Vite · FSD</text>
+    </g>
+
+    <g transform="translate(82 346)">
+      <circle cx="20" cy="20" r="20" fill="#ffffff" stroke="#2d3142" stroke-opacity=".16"/>
+      <text x="20" y="25" text-anchor="middle" font-size="14" font-weight="700">4</text>
+      <text x="62" y="25" font-size="21" font-weight="650">Verify</text>
+      <text x="62" y="46" font-size="12" fill="#7a8399">typecheck · lint · architecture · browser</text>
+    </g>
+
+    <g transform="translate(82 434)">
+      <circle cx="20" cy="20" r="20" fill="#ffffff" stroke="#2d3142" stroke-opacity=".16"/>
+      <text x="20" y="25" text-anchor="middle" font-size="14" font-weight="700">5</text>
+      <text x="62" y="25" font-size="21" font-weight="650">Delivery</text>
+      <text x="62" y="46" font-size="12" fill="#7a8399">shareable preview + evidence</text>
+    </g>
+
+    <path d="M102 122V158M102 210V246M102 298V334M102 386V422" stroke="#596579" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+
+    <text x="280" y="528" text-anchor="middle" font-size="12" font-weight="550" fill="#7a8399">shortest path to verified stakeholder value</text>
+  </g>
+</svg>

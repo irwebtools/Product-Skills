@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="470" viewBox="0 0 560 470" role="img" aria-labelledby="title desc">
+  <title id="title">Developer continuation path</title>
+  <desc id="desc">Page or reusable feature code uses shared API and auth infrastructure, then a provider that can evolve from mock data to Supabase or another backend.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#596579"/>
+    </marker>
+  </defs>
+
+  <rect width="560" height="470" fill="#f7f6f2"/>
+
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" fill="#2d3142">
+    <text x="52" y="44" font-size="12" font-weight="700" letter-spacing="1.8" fill="#7a8399">DEVELOPER CONTINUATION</text>
+    <line x1="52" y1="58" x2="508" y2="58" stroke="#2d3142" stroke-opacity=".12"/>
+
+    <g transform="translate(94 88)">
+      <rect width="372" height="70" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+      <text x="186" y="31" text-anchor="middle" font-size="20" font-weight="650">Page / reusable Feature</text>
+      <text x="186" y="51" text-anchor="middle" font-size="12" fill="#7a8399">product UI + interaction</text>
+    </g>
+
+    <path d="M280 158V194" stroke="#596579" stroke-width="1.3" fill="none" marker-end="url(#arrow)"/>
+
+    <g transform="translate(94 194)">
+      <rect width="372" height="70" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+      <text x="186" y="31" text-anchor="middle" font-size="20" font-weight="650">Shared API / Auth</text>
+      <text x="186" y="51" text-anchor="middle" font-size="12" fill="#7a8399">typed infrastructure boundary</text>
+    </g>
+
+    <path d="M280 264V300" stroke="#596579" stroke-width="1.3" fill="none" marker-end="url(#arrow)"/>
+
+    <g transform="translate(94 300)">
+      <rect width="372" height="58" rx="8" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.1"/>
+      <text x="186" y="36" text-anchor="middle" font-size="20" font-weight="650">Provider</text>
+    </g>
+
+    <path d="M280 358V382H118V394M280 382V394M280 382H442V394" stroke="#596579" stroke-opacity=".6" stroke-width="1.2" fill="none"/>
+
+    <g font-size="14" font-weight="650">
+      <g transform="translate(68 394)">
+        <rect width="100" height="42" rx="6" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+        <text x="50" y="26" text-anchor="middle">Mock</text>
+      </g>
+      <g transform="translate(230 394)">
+        <rect width="100" height="42" rx="6" fill="#fff7f2" stroke="#eb6c36" stroke-opacity=".55"/>
+        <text x="50" y="26" text-anchor="middle" fill="#b74f23">Supabase</text>
+      </g>
+      <g transform="translate(392 394)">
+        <rect width="100" height="42" rx="6" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+        <text x="50" y="26" text-anchor="middle">Backend</text>
+      </g>
+    </g>
+
+    <text x="280" y="458" text-anchor="middle" font-size="12" font-weight="550" fill="#7a8399">provider changes without rewriting product UI</text>
+  </g>
+</svg>
