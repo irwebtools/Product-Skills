@@ -22,7 +22,7 @@ Produce a concise definition that answers:
 
 ## Existing-product feature inventory
 
-When `memory/FEATURES.md` exists for the scoped project, read it before proposing implementation. In a monorepo or nested app, use the nearest relevant project memory such as `app/memory/FEATURES.md` or `packages/<name>/memory/FEATURES.md`. Treat it as the concise current capability map, then verify relevant claims against source/config when needed.
+When `memory/FEATURES.md` exists for the scoped project, read it before proposing implementation. In a nested app, use the nearest relevant project memory such as `app/memory/FEATURES.md`. Treat it as the concise current capability map, then verify relevant claims against source/config when needed.
 
 Do not confuse a **product feature** with the FSD `features/` layer. A product may have many capabilities while correctly using only `app/`, `pages/`, and `shared/` in FSD.
 
@@ -37,7 +37,7 @@ Before coding, make the delta explicit enough that the agent does not duplicate 
 
 After successful verification, update the scoped project's `memory/FEATURES.md` to the resulting **current truth**. Do not turn it into a chronological changelog; git history already records detailed history. For an intentional removal whose rationale matters across sessions, also record a durable decision in `memory/DECISIONS.md` and reference that decision from the feature inventory.
 
-If an existing product has no feature inventory yet, create one only when the task is substantial enough that preserving capability state will help future work. Use `templates/memory/FEATURES.md` as the lightweight contract.
+If an existing product has no feature inventory yet, create one only when the task is substantial enough that preserving capability state will help future work. Use `templates/memory/FEATURES.md` as the lightweight contract when available.
 
 ## Method
 

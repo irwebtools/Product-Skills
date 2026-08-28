@@ -1,28 +1,44 @@
-# Product-Skills Repository Memory
+# Project Memory
 
-This file is memory for the **Product-Skills repository itself**. It is not a template and must not be copied as policy into generated product projects.
-
-Keep it short and factual. Common reusable behavior belongs in `AGENTS.md`, `skills/`, `rules/`, workflows, and deterministic tooling.
+Keep this file short and factual. It should be cheap enough to load frequently.
 
 ## Product
 
 - Purpose: lightweight AI coding harness for PMs/BAs to create deployable React experiences that developers can continue toward production.
-- Core is runtime-agnostic; runtime-specific configuration is additive.
-- Canonical reusable skills live under `/skills`.
+- Core is runtime-agnostic; runtime-specific config is additive.
 
-## Current repository conventions
+## Default frontend stack
 
-- Greenfield frontend policy is defined by `skills/react/SKILL.md` and `rules/engineering.md`; Feature-Sliced Design v2.1 is the current architecture standard.
-- Optional backend guidance is defined by `skills/supabase/SKILL.md`.
-- Verification and delivery gates are defined by `skills/verify/` and `skills/delivery/`.
-- Runtime/project configuration is currently committed for Claude Code, OpenAI Codex, and Cursor.
-- Cross-project failure lessons live in `rules/lessons.md`.
-- Starter project memory contracts live in `templates/memory/`.
+- React + TypeScript + Vite
+- TypeScript strict mode for greenfield
+- ESLint required for greenfield React; lint must be warning-free
+- Feature-Sliced Design (FSD) v2.1 is mandatory for greenfield React
+- Steiger architecture validation is required for greenfield (`architecture` script, normally `steiger src`)
+- Tailwind CSS + shadcn/ui
+- package manager: respect existing; prefer pnpm for greenfield; npm/yarn supported
+- optional backend: Supabase when persistence/auth/storage/server behavior is useful
+- Vercel for preview delivery
+
+## Architecture
+
+- FSD starts with `app/`, `pages/`, and `shared/`.
+- Add `features/` and `entities/` only for demonstrated current reuse; `widgets/` is discouraged and `processes/` is deprecated.
+- Imports flow downward: `app → pages → widgets → features → entities → shared`.
+- Slices expose public APIs through `index.ts`.
+- Generic API/CRUD transport belongs in `shared/api`; auth/session infrastructure in `shared/auth`; business logic does not belong in `shared/`.
+- Do not force DDD/Clean Architecture layers into simple frontend work.
+- Backend artifacts must remain reproducible in source control.
+
+## Quality gates
+
+Greenfield React must pass `typecheck`, warning-free `lint`, `architecture`, and `build` before sharing, plus browser verification of the main journey.
 
 ## Core path
 
 `definition → ux-ui → react → verify → delivery`
 
-Conditional capabilities include `supabase`, `explorer`, `reviewer`, and `debugger`.
+Conditional: `supabase`, `explorer`, `reviewer`, `debugger`.
 
-If this memory disagrees with source/config or canonical skills/rules, source/config and canonical instructions win.
+## Runtime compatibility
+
+Any capable coding agent may use the canonical harness. Project configuration is currently provided for Claude Code, OpenAI Codex, and Cursor; ChatGPT and other agents can integrate through their own repository/tool mechanisms.

@@ -1,8 +1,6 @@
-# Harness Lessons
+# Lessons
 
-Store only verified cross-project mistakes or recoveries that are likely to recur across Product-Skills runs.
-
-These are harness-level lessons, not product-specific memory. Project-specific facts and decisions belong in that project's `memory/` directory.
+Store only verified mistakes or recoveries that are likely to recur.
 
 ## L-001 — Do not invent from an unavailable design source
 Symptom: A task referenced a Figma node, access failed, and implementation continued from generic dashboard assumptions.
@@ -24,7 +22,7 @@ Symptom: A demo password was committed and Supabase auth seed logic depended on 
 Root cause: Demo convenience was allowed to override credential hygiene and portability.
 Prevention: Never commit reusable credentials. Seed application data only; create demo identities through explicit non-production setup/Auth flows. Verify RLS with both allowed and denied principals.
 
-## L-005 — README diagrams should be editorial, not UI mockups
-Symptom: Diagram canvases blended into README backgrounds, nested rounded cards added chrome, rainbow borders diluted hierarchy, and decorative motion added noise.
-Root cause: Documentation diagrams were styled like dashboard UI instead of editorial technical figures.
-Prevention: Prefer a clean warm-neutral paper, hairline rules, small radius, one focal accent, static output by default, low density, and no outer card unless framing materially helps comprehension.
+## L-005 — README diagrams need their own visual surface
+Symptom: White SVG canvases disappeared into GitHub's white README background; heavy colored borders and repeated moving dots made the diagrams feel noisy.
+Root cause: Diagrams were styled as isolated UI mockups instead of embedded documentation visuals.
+Prevention: Use a distinct neutral diagram canvas, white internal cards, thin neutral borders, small accent strips, concise labels, and static arrows by default. Avoid decorative animation unless it materially improves comprehension. Keep diagrams mobile-first and aligned with the current architecture contract.

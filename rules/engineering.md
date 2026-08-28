@@ -8,9 +8,6 @@
 - Slices expose external imports through `index.ts`; do not bypass another slice's public API.
 - Keep reusable infrastructure without business logic in `shared/`; keep single-use product behavior in its owning page until real reuse justifies extraction.
 - Put generic API/CRUD transport in `shared/api`, auth/session infrastructure in `shared/auth`, reusable UI primitives in `shared/ui`, and app providers/router in `app`.
-- Treat **product features/capabilities** separately from the FSD `features/` layer. When `memory/FEATURES.md` exists, preserve its current truth across meaningful behavior changes.
-- Before existing-product behavior changes, classify affected capabilities as `ADD`, `CHANGE`, `REMOVE`, or `NONE`; after verification update the feature inventory rather than relying on agent memory.
-- Intentional removals that must not be restored accidentally should reference a durable project decision.
 - Greenfield React uses TypeScript strict mode and ESLint.
 - Greenfield projects expose `typecheck`, `lint`, `architecture`, and `build`; `architecture` normally runs `steiger src`.
 - `typecheck`, warning-free `lint`, `architecture`, and `build` must pass before `PREVIEW_READY`.

@@ -1,0 +1,3 @@
+-- Application seed data for local/stakeholder demos.
+-- Auth users are not seeded here. Create accounts through the app sign-up flow
+-- or your project's non-production auth setup workflow.
