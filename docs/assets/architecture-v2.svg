@@ -1,58 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="660" viewBox="0 0 560 660" role="img" aria-labelledby="title desc">
-  <title id="title">Product-Skills architecture</title>
-  <desc id="desc">PM and BA intent flows through Product-Skills and an AI coding agent into React TypeScript with Feature-Sliced Design, then to a Vercel preview.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-labelledby="title desc">
+  <title id="title">Product-Skills harness overview</title>
+  <desc id="desc">Business intent enters an AI Coding Agent supported by the Product-Skills harness. The harness contains skills, context, rules, tools, and verification. The result is verified product work.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#596579"/>
     </marker>
   </defs>
 
-  <rect width="560" height="660" fill="#f7f6f2"/>
+  <rect width="560" height="300" fill="#f7f6f2"/>
 
   <g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" fill="#2d3142">
-    <text x="52" y="48" font-size="12" font-weight="700" letter-spacing="1.8" fill="#7a8399">SYSTEM OVERVIEW</text>
-    <line x1="52" y1="62" x2="508" y2="62" stroke="#2d3142" stroke-opacity=".12"/>
+    <text x="40" y="38" font-size="11" font-weight="700" letter-spacing="1.7" fill="#7a8399">PRODUCT-SKILLS</text>
+    <line x1="40" y1="52" x2="520" y2="52" stroke="#2d3142" stroke-opacity=".12"/>
 
-    <g transform="translate(82 92)">
-      <rect width="396" height="82" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
-      <circle cx="48" cy="41" r="18" fill="#2d3142"/>
-      <circle cx="48" cy="35" r="6" fill="#f7f6f2"/>
-      <path d="M37 55c2-10 20-10 22 0" fill="#f7f6f2"/>
-      <text x="86" y="49" font-size="22" font-weight="650">PM / BA</text>
-    </g>
+    <text x="72" y="151" text-anchor="middle" font-size="16" font-weight="650">Business intent</text>
+    <path d="M132 145H166" stroke="#596579" stroke-width="1.35" fill="none" marker-end="url(#arrow)"/>
 
-    <path d="M280 174V214" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+    <rect x="174" y="78" width="252" height="146" rx="10" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.1"/>
+    <text x="194" y="104" font-size="10" font-weight="750" letter-spacing="1.4" fill="#eb6c36">HARNESS</text>
+    <text x="300" y="145" text-anchor="middle" font-size="20" font-weight="700">AI Coding Agent</text>
+    <line x1="202" y1="166" x2="398" y2="166" stroke="#2d3142" stroke-opacity=".10"/>
+    <text x="300" y="194" text-anchor="middle" font-size="13" font-weight="600" fill="#596579">Skills · Context · Rules · Tools · Verify</text>
 
-    <g transform="translate(64 214)">
-      <rect width="432" height="108" rx="8" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.2"/>
-      <text x="24" y="30" font-size="11" font-weight="750" letter-spacing="1.5" fill="#eb6c36">PRODUCT-SKILLS</text>
-      <circle cx="48" cy="70" r="18" fill="#eb6c36" fill-opacity=".10"/>
-      <path d="M40 70h16M48 62v16" stroke="#eb6c36" stroke-width="2" stroke-linecap="round"/>
-      <text x="82" y="78" font-size="23" font-weight="650">AI Coding Agent</text>
-    </g>
+    <path d="M426 145H458" stroke="#596579" stroke-width="1.35" fill="none" marker-end="url(#arrow)"/>
+    <text x="502" y="142" text-anchor="middle" font-size="16" font-weight="650">Verified</text>
+    <text x="502" y="162" text-anchor="middle" font-size="16" font-weight="650">work</text>
 
-    <path d="M280 322V362" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
-
-    <g transform="translate(82 362)">
-      <rect width="396" height="98" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
-      <g transform="translate(50 49)" stroke="#2e5aa8" fill="none" stroke-width="1.8">
-        <ellipse rx="23" ry="8"/>
-        <ellipse rx="23" ry="8" transform="rotate(60)"/>
-        <ellipse rx="23" ry="8" transform="rotate(120)"/>
-        <circle r="3.8" fill="#2e5aa8"/>
-      </g>
-      <text x="92" y="44" font-size="21" font-weight="650">React + TypeScript</text>
-      <text x="92" y="68" font-size="13" font-weight="550" fill="#596579">Vite · FSD v2.1</text>
-    </g>
-
-    <path d="M280 460V500" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
-
-    <g transform="translate(82 500)">
-      <rect width="396" height="82" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
-      <path d="M36 56L50 30l14 26Z" fill="#2d3142"/>
-      <text x="92" y="49" font-size="22" font-weight="650">Vercel Preview</text>
-    </g>
-
-    <text x="280" y="622" text-anchor="middle" font-size="12" font-weight="550" fill="#7a8399">business intent → working product experience</text>
+    <text x="300" y="260" text-anchor="middle" font-size="12" font-weight="550" fill="#7a8399">Product-Skills is the repository harness around the agent</text>
   </g>
 </svg>
