@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="340" viewBox="0 0 960 340" role="img" aria-labelledby="t d">
+  <title id="t">Product Team versus AI responsibilities</title>
+  <desc id="d">Product Team owns What, Why, Constraints, and Feedback. AI Coding owns How, Implementation, Architecture, Verification, and Preview.</desc>
+  <defs>
+    <marker id="md" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 1.5 L8 5 L0 8.5 Z" fill="#5a6578"/>
+    </marker>
+    
+    <style type="text/css"><![CDATA[
+      .sans { font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans', 'Helvetica Neue', Arial, sans-serif; }
+      .mono { font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Noto Sans Mono', Consolas, monospace; }
+    ]]></style>
+  </defs>
+  <rect width="960" height="340" fill="#f7f6f3"/>
+  <text class="mono" x="40" y="36" fill="#8a93a3" font-size="11" letter-spacing="0.18em">RESPONSIBILITY MODEL</text>
+  <text class="sans" x="40" y="64" fill="#1f2430" font-size="22" font-weight="600">You decide WHAT. AI decides HOW.</text>
+  <rect x="40" y="96" width="300" height="180" fill="#ffffff" stroke="rgba(31,36,48,0.12)"/>
+  <rect x="40" y="96" width="6" height="180" fill="#1f2430"/>
+  <text class="mono" x="64" y="126" fill="#8a93a3" font-size="10" letter-spacing="0.16em">PRODUCT TEAM</text>
+  <text class="sans" x="64" y="158" fill="#1f2430" font-size="18" font-weight="600">WHAT</text>
+  <text class="sans" x="64" y="186" fill="#5a6578" font-size="14">WHY / CONSTRAINTS</text>
+  <text class="sans" x="64" y="214" fill="#5a6578" font-size="14">EXPECTED RESULT</text>
+  <text class="sans" x="64" y="242" fill="#5a6578" font-size="14">FEEDBACK</text>
+  <path d="M350 186 H390" stroke="#5a6578" stroke-width="1.25" fill="none" marker-end="url(#md)"/>
+  <text class="mono" x="352" y="176" fill="#8a93a3" font-size="9" letter-spacing="0.08em">prompt</text>
+  <rect x="400" y="96" width="300" height="180" fill="#ffffff" stroke="rgba(31,36,48,0.12)"/>
+  <rect x="400" y="96" width="6" height="180" fill="#5a6578"/>
+  <text class="mono" x="424" y="126" fill="#8a93a3" font-size="10" letter-spacing="0.16em">AI CODING</text>
+  <text class="sans" x="424" y="158" fill="#1f2430" font-size="18" font-weight="600">HOW</text>
+  <text class="sans" x="424" y="186" fill="#5a6578" font-size="14">IMPLEMENTATION</text>
+  <text class="sans" x="424" y="214" fill="#5a6578" font-size="14">ARCHITECTURE</text>
+  <text class="sans" x="424" y="242" fill="#5a6578" font-size="14">VERIFICATION</text>
+  <path d="M710 186 H750" stroke="#5a6578" stroke-width="1.25" fill="none" marker-end="url(#md)"/>
+  <text class="mono" x="712" y="176" fill="#8a93a3" font-size="9" letter-spacing="0.08em">deliver</text>
+  <rect x="760" y="96" width="160" height="180" fill="rgba(235,108,54,0.08)" stroke="#eb6c36" stroke-width="1.5"/>
+  <text class="mono" x="780" y="126" fill="#eb6c36" font-size="10" letter-spacing="0.14em">RESULT</text>
+  <text class="sans" x="780" y="168" fill="#1f2430" font-size="16" font-weight="600">Preview</text>
+  <text class="sans" x="780" y="196" fill="#5a6578" font-size="13">Working app</text>
+  <text class="sans" x="780" y="224" fill="#5a6578" font-size="13">You review</text>
+  <text class="sans" x="780" y="252" fill="#8a93a3" font-size="12">Not source code</text>
+  <text class="sans" x="40" y="316" fill="#5a6578" font-size="13">Technical complexity stays with AI Coding. Product Team stays with product judgment.</text>
+</svg>

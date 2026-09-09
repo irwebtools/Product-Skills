@@ -1,10 +1,18 @@
+---
+description: Engineering quality expectations for Product-Skills delivery
+alwaysApply: false
+---
+
 # Engineering Rules
 
 - Optimize for the smallest working experience that preserves a clean continuation path.
-- Prefer existing repository conventions. Do not migrate an established architecture during unrelated work.
+- Follow [agent-behavior](agent-behavior.md), [change-scope](change-scope.md), [fsd-governance](fsd-governance.md), and [react-anti-patterns](react-anti-patterns.md).
+- See [architecture governance](../docs/ARCHITECTURE-GOVERNANCE.md) for deep reference.
+- Prefer existing repository conventions, but do not invent a permanent architecture that replaces the Product-Skills React standard.
 - **Greenfield React must follow Feature-Sliced Design (FSD) v2.1.**
-- Start FSD with only `app/`, `pages/`, and `shared/`; add `features/` and `entities/` only for demonstrated current reuse. `widgets/` is discouraged and `processes/` is deprecated.
-- FSD imports flow downward only: `app → pages → widgets → features → entities → shared`.
+- **Existing React projects retain established architecture unless migration is explicitly authorized.** Agreed migrations use incremental boundaries and regression checks.
+- Start FSD with only `app/`, `pages/`, and `shared/`; add `features/` and `entities/` only for demonstrated current reuse. The platform profile excludes `widgets/` and `processes/`; compose screens in `pages/`.
+- FSD imports flow downward only: `app → pages → features → entities → shared`.
 - Slices expose external imports through `index.ts`; do not bypass another slice's public API.
 - Keep reusable infrastructure without business logic in `shared/`; keep single-use product behavior in its owning page until real reuse justifies extraction.
 - Put generic API/CRUD transport in `shared/api`, auth/session infrastructure in `shared/auth`, reusable UI primitives in `shared/ui`, and app providers/router in `app`.

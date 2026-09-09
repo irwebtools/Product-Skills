@@ -1,0 +1,18 @@
+name: acceptance-criteria
+purpose: Make success observable for Product review before developer handoff.
+trigger:
+  - acceptance-criteria
+  - AC
+  - definition of done
+inputs:
+  - User stories
+  - Business rules
+  - Scope boundary
+outputs:
+  - Acceptance criteria per story
+  - Negative cases
+  - Demo checklist
+dependencies:
+  - product/user-story
+verification:
+  - verification/README.md

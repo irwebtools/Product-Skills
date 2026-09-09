@@ -1,0 +1,19 @@
+name: ux-flow
+purpose: Agree experience behavior so POC implementation follows Product intent.
+trigger:
+  - ux-flow
+  - user journey
+  - screen flow
+inputs:
+  - Feature brief
+  - User stories
+  - Acceptance criteria
+outputs:
+  - User journey
+  - Screen flow
+  - States
+  - Interactions
+dependencies:
+  - product/acceptance-criteria
+verification:
+  - verification/README.md

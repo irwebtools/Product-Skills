@@ -1,3 +1,8 @@
+---
+description: Captured lessons to avoid repeating product delivery mistakes
+alwaysApply: false
+---
+
 # Harness Lessons
 
 Store only verified cross-project mistakes or recoveries that are likely to recur across Product-Skills runs.
@@ -14,10 +19,10 @@ Symptom: ESLint exited successfully while React warnings remained, and the resul
 Root cause: Process exit code was treated as the whole quality signal.
 Prevention: Greenfield lint must run with a zero-warning policy and must not be reported clean while warnings remain.
 
-## L-003 — Give PM/BA one preview link
+## L-003 — Give Product Team one preview link
 Symptom: Delivery reported a production/alias URL, immutable deployment URL, and Vercel inspector as if they were three previews.
 Root cause: Technical deployment metadata was mixed with stakeholder-facing delivery output.
-Prevention: Report exactly one primary Share URL to PM/BA. Keep deployment ID, immutable URL, and inspector under optional technical metadata.
+Prevention: Report exactly one primary Share URL to the Product Team. Keep deployment ID, immutable URL, and inspector under optional technical metadata.
 
 ## L-004 — Demo backend setup must be safe and reproducible
 Symptom: A demo password was committed and Supabase auth seed logic depended on internal auth tables.

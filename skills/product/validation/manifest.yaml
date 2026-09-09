@@ -1,0 +1,20 @@
+name: validation
+purpose: Record Product acceptance or rejection of demonstrated behavior.
+trigger:
+  - validation
+  - product acceptance
+  - preview review
+inputs:
+  - Runnable POC
+  - Acceptance criteria
+  - UX flow
+outputs:
+  - Validation record
+  - Accepted criteria
+  - Rejected feedback
+  - Revision requests
+dependencies:
+  - product/acceptance-criteria
+  - delivery/react-fsd-poc
+verification:
+  - verification/README.md

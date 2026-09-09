@@ -1,0 +1,19 @@
+name: supabase
+purpose: optional auth, persistence, storage, or light server behavior
+trigger:
+  - Supabase
+  - auth
+  - persistence
+  - RLS
+requires:
+  - backend-need
+outputs:
+  - backend artifacts
+  - verification-report
+optional: true
+
+inputs:
+  - agreed task scope and existing project context
+dependencies: []
+verification:
+  - evidence for declared outputs and relevant project checks

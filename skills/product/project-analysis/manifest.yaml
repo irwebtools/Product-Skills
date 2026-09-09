@@ -1,0 +1,18 @@
+name: project-analysis
+purpose: Produce a Project Analysis Report so the agent installs and loads only required skills.
+trigger:
+  - project-analysis
+  - existing project
+  - adopt product-skills
+  - before coding
+inputs:
+  - Repository path or workspace
+  - User request / product intent
+outputs:
+  - Project Analysis Report
+  - Recommended workflow
+  - Required skills
+  - Potential risks
+dependencies: []
+verification:
+  - verification/README.md

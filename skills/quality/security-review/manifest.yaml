@@ -1,0 +1,17 @@
+name: security-review
+purpose: Apply Product-Skills security governance before handoff or risky changes.
+trigger:
+  - security-review
+  - secrets
+  - permissions
+inputs:
+  - Change scope
+  - Changed files
+  - Auth or data touchpoints
+outputs:
+  - Security review notes
+  - Blockers
+  - Follow-ups
+dependencies: []
+verification:
+  - verification/README.md

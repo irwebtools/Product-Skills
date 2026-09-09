@@ -1,0 +1,18 @@
+name: product-discovery
+purpose: Turn vague requests into a shared problem statement Product roles can verify.
+trigger:
+  - product-discovery
+  - idea
+  - problem framing
+inputs:
+  - Plain-language idea or request
+  - Known users and constraints
+outputs:
+  - Problem statement
+  - Users in scope
+  - Business goal
+  - Success metrics
+  - Open questions
+dependencies: []
+verification:
+  - verification/README.md

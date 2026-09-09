@@ -1,50 +1,41 @@
 # Harness Engineering
 
-Product-Skills uses the definition:
+Product-Skills is an **AI Product Delivery System**. Internally it uses:
 
 ```text
 Agent = Model + Harness
 ```
 
-The harness is cross-cutting behavior, not a repository directory.
+The harness is the delivery engine behind the product layer — not a `harness/` directory.
 
-## Components
+## Components inside the harness
 
-### Instructions
+These parts work together. They are **not** three equal top-level layers such as “Harness / Skills / Tools”.
 
-`AGENTS.md`, `CLAUDE.md`, and runtime-specific rules describe persistent operating constraints.
+1. **Skills** — reusable capabilities in `skills/`
+2. **Rules** — durable engineering constraints in `rules/`
+3. **Workflows** — short repeatable recipes in `workflows/`
+4. **Context & memory** — verified project knowledge in `memory/`
+5. **Tools** — local tools and remote integrations used only when needed
+6. **Verification** — evidence before preview or developer handoff
 
-### Skills
+## Operating loop
 
-`skills/` provides reusable procedures. Only relevant skills should be loaded.
+```text
+implement → verify → fix only on failure → verify again
+```
 
-### Context
+Subagents are optional isolation tools, not mandatory pipeline stages.
 
-The agent should receive the minimum useful context capsule: task, acceptance criteria, project facts, relevant skill, and relevant files.
+## Scope
 
-### Memory
+Optimize for:
 
-`memory/PROJECT.md`, `DECISIONS.md`, and `LESSONS.md` preserve small verified knowledge without replaying the full conversation.
+```text
+Product idea → UX → Frontend POC → Developer handoff
+```
 
-### Tools and MCP
-
-Use local tools for deterministic filesystem/git/npm/test work. Use MCP/connectors for remote systems such as GitHub, Vercel, or Supabase when available.
-
-### Execution loop
-
-The default loop is implement → verify → fix/debug only on failure → verify.
-
-### Subagents
-
-Subagents are conditional context-isolation tools, not mandatory pipeline stages.
-
-### Guardrails
-
-Rules and deterministic checks prevent secrets, unsafe data handling, and premature success claims.
-
-### Observability
-
-Build output, test evidence, browser behavior, and deployment status provide the evidence used by verification.
+Do not expand Product-Skills into a general DevOps platform, backend framework, or full software-engineering OS.
 
 ## Design principle
 

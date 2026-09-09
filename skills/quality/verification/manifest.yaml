@@ -1,0 +1,19 @@
+name: verification
+purpose: Prove engineering and product evidence before gates, separate from Product validation.
+trigger:
+  - verification
+  - PREVIEW_READY
+  - evidence
+inputs:
+  - Acceptance criteria
+  - Runnable implementation
+  - Change scope
+  - Architecture decision
+outputs:
+  - Verification evidence
+  - Gate verdict
+  - Open risks
+dependencies:
+  - delivery/react-fsd-poc
+verification:
+  - verification/README.md

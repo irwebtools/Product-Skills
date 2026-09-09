@@ -1,0 +1,34 @@
+name: product-skills
+version: 1.0.0
+description: AI Product Team Skill Platform
+primary_stack:
+  frontend:
+    framework: React
+    language: TypeScript
+    architecture: Feature-Sliced Design
+skills:
+  product:
+    - project-analysis
+    - product-discovery
+    - product-definition
+    - user-story
+    - acceptance-criteria
+    - ux-flow
+    - validation
+  delivery:
+    - architecture-decision
+    - react-fsd-poc
+    - developer-handoff
+  quality:
+    - verification
+    - security-review
+skill_index: skills/index.yaml
+review_artifacts: .ai-review/
+install:
+  targets:
+    - cursor
+    - claude-code
+    - codex
+  commands:
+    - product-skills init
+    - npm run init

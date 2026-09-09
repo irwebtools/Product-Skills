@@ -1,0 +1,100 @@
+# Skill selection index for product-skills
+
+# AI agents: load only skills whose "when" matches the user intent and project analysis.
+# Canonical skill bodies live under skills/{product,delivery,quality}/<name>/.
+
+skills:
+  project-analysis:
+    path: product/project-analysis
+    when:
+      - existing project
+      - unknown repository
+      - adopt product-skills
+      - before coding
+
+  product-discovery:
+    path: product/product-discovery
+    when:
+      - new idea
+      - problem framing
+      - discovery
+
+  product-definition:
+    path: product/product-definition
+    when:
+      - new feature
+      - business request
+      - feature brief
+      - scope
+
+  user-story:
+    path: product/user-story
+    when:
+      - user story
+      - backlog breakdown
+
+  acceptance-criteria:
+    path: product/acceptance-criteria
+    when:
+      - acceptance criteria
+      - definition of done
+      - demo checklist
+
+  ux-flow:
+    path: product/ux-flow
+    when:
+      - user journey
+      - screen flow
+      - UX
+
+  validation:
+    path: product/validation
+    when:
+      - product acceptance
+      - preview review
+      - validate prototype
+
+  architecture-decision:
+    path: delivery/architecture-decision
+    when:
+      - React
+      - TypeScript
+      - frontend feature
+      - FSD
+      - architecture decision
+
+  react-fsd-poc:
+    path: delivery/react-fsd-poc
+    when:
+      - prototype
+      - POC
+      - React implementation
+
+  developer-handoff:
+    path: delivery/developer-handoff
+    when:
+      - handoff
+      - DEV_READY
+      - developer continuation
+
+  verification:
+    path: quality/verification
+    when:
+      - verification
+      - evidence
+      - PREVIEW_READY
+
+  security-review:
+    path: quality/security-review
+    when:
+      - security
+      - secrets
+      - permissions
+      - auth
+
+  bug-fix:
+    path: ../workflows/bug-fix.md
+    when:
+      - bug
+      - incident
+      - defect

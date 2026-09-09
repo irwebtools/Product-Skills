@@ -24,16 +24,19 @@ ChatGPT can use repository context and connected tools when available. Other cod
 
 ## Canonical content
 
-`skills/`, `subagents/`, `memory/`, `rules/`, and `workflows/` are runtime-neutral sources.
+`skills/`, `agents/`, `memory/`, `rules/`, and `workflows/` are runtime-neutral sources.
 
 Runtime-specific files should contain only the minimum integration needed by that runtime and should point back to canonical content rather than copy it.
 
 ## Current project configuration
 
-- Claude Code — `CLAUDE.md`, `.claude/`, root `.mcp.json`.
-- OpenAI Codex — `AGENTS.md`, `.codex/config.toml`.
-- Cursor — `AGENTS.md`, `.cursor/mcp.json` and other Cursor-only configuration when needed.
-- Other runtimes — use `AGENTS.md` + `/skills` through their native mechanism.
+- Claude Code — `CLAUDE.md`, `.claude/`
+- OpenAI Codex — `AGENTS.md`, `.codex/`
+- Cursor — `.cursor-plugin/plugin.json`, `AGENTS.md`, `.cursor/` notes
+- Optional `.agents/` — thin runtime wiring only; do not duplicate skills here
+- Other runtimes — use `AGENTS.md` + `/skills` through their native mechanism
+
+The public Marketplace package does not ship required MCP server configuration.
 
 ## Runtime addition rule
 

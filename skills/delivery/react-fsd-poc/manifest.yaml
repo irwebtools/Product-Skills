@@ -1,0 +1,20 @@
+name: react-fsd-poc
+purpose: Create a reusable prototype with clear ownership for developer continuation.
+trigger:
+  - react-fsd-poc
+  - POC
+  - React prototype
+inputs:
+  - Acceptance criteria
+  - UX flow
+  - Architecture Decision Record
+  - Change scope
+outputs:
+  - Runnable React POC
+  - Setup notes
+  - Mock inventory
+  - Implementation summary
+dependencies:
+  - delivery/architecture-decision
+verification:
+  - verification/README.md
