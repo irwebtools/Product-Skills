@@ -1,3 +1,8 @@
+---
+description: Delivery expectations for React FSD product work
+alwaysApply: false
+---
+
 # Delivery Rules
 
 ## PREVIEW_READY

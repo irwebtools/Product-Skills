@@ -1,0 +1,22 @@
+name: developer-handoff
+purpose: Give developers intent, structure, limitations, and next production steps.
+trigger:
+  - developer-handoff
+  - DEV_READY
+  - handoff
+inputs:
+  - Validated definition and UX
+  - POC and verification evidence
+  - Architecture decision
+outputs:
+  - Product intent
+  - Implemented features
+  - FSD structure
+  - Changed files
+  - Known limitations
+  - Production next steps
+dependencies:
+  - product/validation
+  - quality/verification
+verification:
+  - verification/README.md

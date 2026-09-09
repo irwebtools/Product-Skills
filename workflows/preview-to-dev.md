@@ -1,21 +1,10 @@
 # Workflow: Preview to Developer-Ready
 
-Start from a stakeholder-accepted preview.
+Prefer [`poc-to-dev.md`](./poc-to-dev.md) for product-language handoff.
 
 ```text
-PREVIEW_READY
-    ↓
-collect accepted feedback / scope
-    ↓
-delivery (developer-ready depth)
-    ↓
-review architecture + data boundaries
-    ↓
-run engineering checks + critical tests
-    ↓
-independent verification
-    ↓
-DEV_READY
+PREVIEW_READY → scoped delivery → checks → DEV_READY
 ```
 
-Preserve validated behavior unless feedback requires a change. The goal is to remove hidden prototype debt without rewriting the product.
+Complete [`templates/handoff/developer-handoff.md`](../templates/handoff/developer-handoff.md).
+Do not redesign unrelated areas during handoff.

@@ -1,0 +1,46 @@
+---
+description: Product-Skills Product Team protocol and React FSD refactor use case
+alwaysApply: true
+---
+
+# Product-Skills protocol
+
+Product-Skills is for Product Team outcomes.
+
+## Responsibility split
+
+Product Team provides: WHAT, WHY, CONSTRAINTS, FEEDBACK.
+
+AI Coding determines: HOW, IMPLEMENTATION, ARCHITECTURE, VERIFICATION, PREVIEW.
+
+## Default workflow
+
+1. Inspect the existing project first when unknown or existing.
+2. Load only required skills.
+3. Preserve existing product behavior unless asked to change it.
+4. Implement within change scope.
+5. Verify architecture, typecheck, lint, tests when available, build, and important journeys.
+6. If the project is configured for Vercel and access exists, deploy a Preview, verify it, and return the Preview URL.
+7. Do not claim success without verification. Do not invent a Preview URL.
+
+## Product Team use case — React + TypeScript + FSD refactor
+
+When asked to refactor a project to React FSD, treat it as **existing project architecture migration**, not redesign or rewrite.
+
+Do **not** create a new skill such as `skills/react-fsd/`.
+
+Orchestrate existing capabilities: project-analysis, architecture-decision, react-fsd-poc, verification, FSD governance, and change-scope rules.
+
+Required outcomes:
+
+- inspect current frontend and product behavior first
+- create only FSD layers that are justified
+- preserve behavior, permissions, API/data behavior, and UX
+- avoid unrelated changes
+- run architecture validation, typecheck, lint, tests when available, build, runtime checks
+- prepare and verify Preview when supported
+- return a concise result and Preview URL (or a clear blocker)
+
+## Cursor naming
+
+Refer to the product as **Cursor**. Do not claim Cursor endorsement, certification, or partnership.

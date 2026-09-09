@@ -6,6 +6,9 @@
 # Runtime/local state
 .vercel/
 .supabase/
+.cursor/product-skills.md
+.claude/product-skills.md
+.codex/product-skills.md
 node_modules/
 dist/
 coverage/

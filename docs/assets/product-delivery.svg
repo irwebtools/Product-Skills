@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="460" viewBox="0 0 420 460" role="img" aria-labelledby="title desc">
+  <title id="title">Product Team to Production</title>
+  <desc id="desc">Product Team to Product-Skills to AI Product Delivery to Development Team to Production.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#596579"/>
+    </marker>
+  </defs>
+  <rect width="420" height="460" fill="#f7f6f2"/>
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" fill="#2d3142" font-size="16" font-weight="650">
+    <rect x="70" y="24" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="54" text-anchor="middle">Product Team</text>
+    <path d="M210 72V96" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="70" y="96" width="280" height="48" rx="8" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.1"/>
+    <text x="210" y="126" text-anchor="middle">Product-Skills</text>
+    <path d="M210 144V168" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="70" y="168" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="198" text-anchor="middle">AI Product Delivery</text>
+    <path d="M210 216V240" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="70" y="240" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="270" text-anchor="middle">Development Team</text>
+    <path d="M210 288V312" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+
+    <rect x="70" y="312" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="342" text-anchor="middle">Production</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+name: testing
+purpose: Ensure typecheck, lint, architecture, build, and journey evidence are considered.
+trigger:
+  - testing
+  - typecheck
+  - architecture check
+inputs:
+  - Implementation
+  - Acceptance criteria
+outputs:
+  - Test/check plan
+  - Executed evidence
+dependencies:
+  - delivery/react-fsd-poc
+verification:
+  - verification/README.md

@@ -1,22 +1,15 @@
 # Cursor configuration
 
-Canonical skills remain in `/skills` and shared behavior remains in `/AGENTS.md`.
+Canonical Product-Skills behavior lives in:
 
-`.cursor/mcp.json` preconfigures project-scoped GitHub, Vercel, and Supabase MCP servers.
+- `.cursor-plugin/plugin.json`
+- `/skills`
+- `/rules`
+- `/AGENTS.md`
 
-## Capability bootstrap
+This repository does **not** ship required MCP servers for the public Cursor Plugin.
 
-Before implementation, Cursor must inspect the requested outcome and determine which tools/MCP servers are required to finish the task end-to-end.
+Optional tools (GitHub, Vercel, Supabase, Figma, etc.) may be connected in Cursor when a specific task needs them — least privilege, only when required.
 
-If a required capability needs authentication, request that connection immediately before coding starts, then resume automatically after authorization.
-
-Examples:
-
-- Figma/design URL in scope → require design/Figma access first;
-- GitHub push/PR in scope → require GitHub first;
-- Vercel deployment in scope → require Vercel first;
-- Supabase backend in scope → require Supabase first.
-
-Do not ask the PM/BA to open Settings and inspect connections manually. Do not require unrelated services.
-
-Keep other Cursor-specific rules/hooks/agent wrappers here only when needed. Do not duplicate canonical skill instructions.
+Do not ask Product Team to configure internals.
+Do not duplicate skill instructions here.

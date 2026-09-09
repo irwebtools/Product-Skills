@@ -1,0 +1,18 @@
+name: user-story
+purpose: Break product intent into stories Development and AI can implement.
+trigger:
+  - user-story
+  - user stories
+  - as a user
+inputs:
+  - Feature brief
+  - Users in scope
+  - Business rules
+outputs:
+  - User stories
+  - Story priority notes
+  - Out-of-scope story list
+dependencies:
+  - product/product-definition
+verification:
+  - verification/README.md

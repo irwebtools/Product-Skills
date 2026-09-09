@@ -1,294 +1,284 @@
 # Product-Skills
 
-> **Product-Skills is a lightweight repository harness for AI Coding Agents. It packages reusable product-delivery skills, project context, rules, workflows, tools, and verification so Product Managers and Business Analysts can turn business intent into verified product work that developers can continue in the same repository.**
+Turn Product Team requests into verified working changes with AI Coding.
 
-Describe the outcome. Your AI Coding Agent reads the harness, selects the relevant skills, performs the work, verifies the result, and keeps useful project context in source control.
+> YOU DESCRIBE WHAT.  
+> AI CODING HANDLES HOW.  
+> YOU REVIEW THE WORKING RESULT.
 
-## Overview
+![Product Team describes a request, AI Coding builds and verifies, then a working Preview is reviewed](docs/diagrams/product-team-flow.svg)
 
-<p align="center">
-  <img src="./docs/assets/architecture-v2.svg" alt="Product-Skills harness overview" width="560" />
-</p>
+**Who is this for?** Product Team.
 
-**Product-Skills is the harness around the AI Coding Agent.** The harness contains the reusable capabilities and repository behavior that guide execution:
+**What is it?** A Cursor Plugin that helps AI Coding analyze your existing project, implement the change you asked for, verify it, and prepare a Preview when supported.
 
-- **Skills** — product-delivery capabilities.
-- **Context & memory** — verified project knowledge.
-- **Rules & workflows** — shared execution conventions.
-- **Tools** — capabilities used when the task needs them.
-- **Verification** — evidence before delivery.
+You do **not** need to understand skills, agents, hooks, manifests, or repository internals.
 
-The goal is simple: **business intent → verified product work → developer continuation in the same repository**.
+---
 
-## Responsibility boundary
+## Start here
 
-Product-Skills is designed around a clear handoff between product work and engineering ownership.
+### 1. Install Product-Skills in Cursor
 
-| Product team focuses on | Development team / SA owns |
+Primary path: install the **product-skills** plugin from the **Cursor Marketplace**.
+
+**Status:** Ready for Cursor Marketplace submission.  
+This repository is **not** claiming Marketplace publication until Cursor approves and lists it.
+
+> Until Cursor publishes the listing, maintainers may load the plugin locally for testing (see Advanced).
+
+### 2. Open your existing project
+
+Open the application you want to change — not this repository.
+
+### 3. Tell AI Coding what you want
+
+Use natural language. Example:
+
+> Refactor this existing project to React + TypeScript + Feature-Sliced Design.  
+> Do not change product behavior.  
+> Verify everything and deploy a Vercel Preview for review.
+
+Or run the Cursor command **react-fsd-refactor**.
+
+### 4. Review the working result
+
+Primary review surface: the **Vercel Preview** (when the project is configured and access exists).
+
+If Preview cannot be created, AI must explain the blocker and still complete local verification that is possible.
+
+---
+
+## How it works
+
+![Five journey stages from request through build, verify, review, and iterate](docs/diagrams/product-team-journey.svg)
+
+You describe **WHAT**.  
+AI determines **HOW**.
+
+---
+
+## Example: React + TypeScript + FSD migration
+
+You have an **existing** application.  
+You want better frontend architecture **without redesigning the product**.
+
+![Existing app inspected, migrated to React TypeScript FSD, verified, then reviewed on Preview](docs/diagrams/react-fsd-migration.svg)
+
+### Copy this prompt
+
+```text
+Refactor this existing project to React + TypeScript +
+Feature-Sliced Design (FSD).
+
+This is an architecture refactoring only.
+
+Preserve:
+
+- existing product behavior
+- business rules
+- user workflows
+- permissions
+- API behavior
+- data behavior
+- existing UX
+
+Do not:
+
+- add new features
+- remove existing features
+- redesign the product
+- change business behavior
+- rewrite unrelated code
+
+First inspect the existing project.
+
+Determine the appropriate FSD boundaries from the actual
+project.
+
+Implement the migration.
+
+Verify:
+
+- FSD architecture
+- typecheck
+- lint
+- tests when available
+- production build
+- important runtime journeys
+
+Fix all verification failures.
+
+If Vercel Preview is supported and access exists,
+deploy and verify it.
+
+Return:
+
+- summary of changes
+- verification status
+- Preview URL
+```
+
+---
+
+## Review the result
+
+![Feedback loop centered on Product Review](docs/diagrams/feedback-loop.svg)
+
+### Check
+
+| Question |
+| --- |
+| Does the requested change work? |
+| Does the existing workflow still work? |
+| Is anything missing? |
+| Did anything unexpected change? |
+| Is the user experience correct? |
+
+You do **not** need to inspect source code, Git diffs, FSD folders, skills, or AI configuration.
+
+### About Vercel
+
+If the project is configured for Vercel and the AI Coding environment has the required access, AI can deploy and verify a Preview.
+
+Product-Skills does **not** always deploy to Vercel. If deployment cannot run, AI must report the blocker — not invent a URL.
+
+---
+
+## More prompts
+
+### Add a feature
+
+```text
+I want to add this feature:
+
+[describe feature]
+
+Users: [users]
+Goal: [goal]
+
+Keep existing behavior unless I explicitly change it.
+Analyze first. Implement. Verify. Provide a Preview when supported.
+```
+
+### Fix a bug
+
+```text
+There is a problem:
+
+[describe problem]
+
+Expected: [expected]
+Actual: [actual]
+
+Investigate first. Make the smallest safe fix. Verify. Provide a Preview when supported.
+```
+
+### Improve UX
+
+```text
+I want to improve this user experience.
+
+Current user problem: [problem]
+Goal: [goal]
+
+Keep unrelated business behavior unchanged.
+Review the current flow first. Implement. Verify. Provide a Preview when supported.
+```
+
+---
+
+## What Product Team provides
+
+![Product Team owns What Why Constraints Feedback; AI Coding owns How](docs/diagrams/responsibility-model.svg)
+
+| Product Team | AI Coding |
 | --- | --- |
-| Functional requirements | Non-functional requirements |
-| Features and user flows | System architecture |
-| Business rules | Scalability and performance |
-| UI/UX and interaction states | Security and integrations |
-| Acceptance criteria | Data model and technology choices |
-| Stakeholder feedback | Coding standards and long-term maintainability |
-
-Product-Skills helps generated code land closer to development expectations, but it does not replace engineering review or architecture ownership.
-
-## Core skills
-
-The [`skills/`](./skills/) directory is the reusable capability library inside the harness.
-
-| Skill | Purpose |
-| --- | --- |
-| [`definition`](./skills/definition/) | Turn business intent into buildable scope |
-| [`ux-ui`](./skills/ux-ui/) | Shape the user journey, states, hierarchy, and responsive behavior |
-| [`react`](./skills/react/) | Build the React + TypeScript experience |
-| [`supabase`](./skills/supabase/) | Add authentication, persistence, storage, or server behavior when useful |
-| [`verify`](./skills/verify/) | Run quality checks and prove the primary journey works |
-| [`delivery`](./skills/delivery/) | Publish a verified preview and prepare developer continuation |
-
-A common path is:
-
-<p align="center">
-  <img src="./docs/assets/default-flow.svg" alt="Default Product-Skills delivery flow" width="560" />
-</p>
-
-**Definition → UX/UI → React → Verify → Delivery**
-
-`supabase` joins the flow when backend behavior is needed. The agent selects only the skills relevant to the task.
-
-## Reuse strategy
-
-The first priority is **frontend reuse**. Product flows, UI states, validation, responsive behavior, and interaction code are closest to the Product team's functional responsibility and have the clearest reuse boundary.
-
-Backend work is optional. It can make a preview credible and preserve useful contracts, migrations, or data assumptions, but reuse should be decided later with the Development team based on the real system context.
+| What you want | Project analysis |
+| Why you want it | Technical approach |
+| What must not change | Implementation |
+| Expected result | Verification |
+| Feedback | Fixes + new Preview |
 
 ---
 
-# Install
+## FAQ
 
-Product-Skills is repository-based. Put the harness in the repository where your AI Coding Agent will work.
+**What project do I open?**  
+Your existing application.
 
-## New product
+**Do I need to learn skills or agents?**  
+No.
 
-Start from Product-Skills:
+**Can I ask for React + TypeScript + FSD?**  
+Yes. Use the example above or the **react-fsd-refactor** command.
 
-```bash
-git clone https://github.com/Trinhduyet/Product-Skills.git my-product
-cd my-product
-```
+**Where do I review?**  
+The working Preview / Staging application.
 
-Point the project at your own remote:
-
-```bash
-git remote rename origin product-skills-source
-git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
-git push -u origin main
-```
-
-You can also fork or copy the repository first and use that as your product repository.
-
-## Existing product
-
-Bring the Product-Skills harness into your existing repository:
-
-```text
-AGENTS.md
-skills/
-rules/
-workflows/
-templates/memory/
-```
-
-Optional harness pieces can be added when useful:
-
-```text
-subagents/
-hooks/
-scripts/
-```
-
-Then add the configuration for the AI Coding Agent you use.
-
-Initialize project memory from [`templates/memory/`](./templates/memory/):
-
-```text
-memory/
-├── PROJECT.md
-├── FEATURES.md
-└── DECISIONS.md
-```
-
-Keep the existing project's stack, package manager, and architecture unless the work explicitly calls for a migration.
-
-## AI Coding Agent setup
-
-| Runtime | Repository entry point | Start |
-| --- | --- | --- |
-| **Claude Code** | `CLAUDE.md`, `.claude/`, `.mcp.json` | run `claude` from the repo root |
-| **OpenAI Codex** | `AGENTS.md`, `.codex/config.toml` | run `codex` or open the repo in Codex |
-| **Cursor** | `AGENTS.md`, `.cursor/mcp.json` | open the repo and use Agent chat |
-| **Other compatible agents** | `AGENTS.md` + `skills/` | use the runtime's native project instruction/tool mechanism |
-
-Start a new agent session after adding Product-Skills so the runtime can read the project instructions cleanly.
-
-See [`docs/RUNTIME-COMPATIBILITY.md`](./docs/RUNTIME-COMPATIBILITY.md) for runtime details.
+**Does Product-Skills require Vercel, GitHub, or Supabase?**  
+No. Those are optional when a specific task needs them.
 
 ---
 
-# Use Product-Skills
+<details>
+<summary>Advanced — plugin maintainers / Marketplace testing</summary>
 
-You normally use Product-Skills by asking for a **product outcome**.
+Not for Product Team daily use.
 
-## First request
+### Local Cursor Plugin test (required before submission)
 
-For example:
+Official docs: [Test plugins locally](https://cursor.com/docs/plugins#test-plugins-locally)
 
-> Build a purchase-request application. Employees can create and submit requests. Managers can review, approve, or reject them. Make the main flow work on desktop and mobile. Use a backend if the workflow needs persistence, then deploy a shareable preview when the flow is verified.
-
-Add useful context when you have it: business rules, acceptance criteria, API specs, screenshots, design references, or repository constraints.
-
-## How skills are selected
-
-The harness helps the agent read the task and choose the smallest useful skill path.
+**Windows path**
 
 ```text
-New business workflow
-→ definition → ux-ui → react → verify → delivery
-
-Existing UI change
-→ ux-ui → react → verify
-
-Backend behavior needed
-→ definition/react → supabase → verify → delivery
-
-Verification-only request
-→ verify
+%USERPROFILE%\.cursor\plugins\local\product-skills\
 ```
 
-You can name a skill explicitly when you want to constrain the task, but normal product work does not require manually invoking skills one by one.
+**Steps**
 
-## External capabilities
-
-Before implementation, the agent determines whether the outcome needs additional access such as:
-
-- an authoritative design or specification source;
-- remote source control;
-- preview deployment;
-- backend or database access.
-
-Only the capabilities needed for the current outcome should enter the workflow.
-
-## Expected delivery
-
-For a normal product request, the agent should:
-
-1. read project instructions and relevant project memory;
-2. select the relevant skills and source files;
-3. resolve business ambiguity that materially changes behavior;
-4. request any missing capability required to proceed;
-5. implement the shortest credible experience;
-6. run deterministic checks;
-7. exercise the primary user journey;
-8. report the result concisely.
-
-A successful delivery should include:
-
-- what was built;
-- what was verified;
-- one primary **Share URL** when a preview was requested;
-- important blockers or deferred work;
-- developer continuation notes when relevant.
-
-If verification fails: **fix → verify again**.
-
-## Continue an existing product
-
-When `memory/FEATURES.md` exists, the agent uses it as the current capability map and classifies requested changes as:
-
-- **ADD** — new capability;
-- **CHANGE** — existing capability changes behavior;
-- **REMOVE** — capability intentionally disappears;
-- **NONE** — implementation or refactor only.
-
-After verification, `FEATURES.md` should describe the new current truth. Git remains the detailed history.
-
-## Project memory
+1. From this repository run:
 
 ```text
-memory/
-├── PROJECT.md    # verified project facts and conventions
-├── FEATURES.md   # current product capabilities
-└── DECISIONS.md  # durable product/technical decisions
+npm run install:local-plugin
 ```
 
-Cross-project lessons belong in [`rules/lessons.md`](./rules/lessons.md).
+   Or manually copy the repo to `%USERPROFILE%\.cursor\plugins\local\product-skills\`
+   (plugin root must contain `.cursor-plugin/plugin.json`).
+2. In Cursor: enable **Include third-party Plugins, Skills, and other configs** if present.
+3. Run **Developer: Reload Window**.
+4. Open **Settings → Plugins** (or Customize → Plugins).
+5. Confirm plugin name: **product-skills**.
+6. Confirm components load:
+   - skills (core Product / Delivery / Quality)
+   - rules
+   - agents (`debugger`, `explorer`, `reviewer`, `verifier`)
+   - commands (`product-request`, `react-fsd-refactor`)
+7. Open any app project and try the command **react-fsd-refactor** (or paste the README FSD prompt).
 
-## Delivery gates
+If the plugin does not appear: confirm the path is `plugins\local\` (not `plugins\cache\local\`), then Reload Window again.
 
-### `PREVIEW_READY`
+### Maintainer validation
 
-Ready for stakeholder feedback when the primary journey works and the relevant checks pass.
+```text
+npm run validate
+```
 
-### `DEV_READY`
+### Optional project bootstrap scripts
 
-Ready for the Development team to continue and review the repository with stable boundaries, proportionate tests, reproducible setup, accurate environment documentation, and visible known debt.
+`install/` helpers copy guidance into another repository for non-Marketplace workflows. They are **maintainer utilities**, not the Product Team install path.
 
-`DEV_READY` is a handoff/readiness signal, not production approval or NFR sign-off.
+- `node install/bootstrap.mjs --target <project>`
+- `node install/install.mjs --target <project>`
 
-## Developer continuation
+Official source: `https://github.com/irwebtools/Product-Skills`
 
-<p align="center">
-  <img src="./docs/assets/production-path.svg" alt="React production continuation path" width="560" />
-</p>
+See `SECURITY.md` and `install/README.md`.
 
-The main reuse target is the frontend experience. Product code and useful contracts stay in the same repository so the Development team can review, keep, harden, or replace implementation pieces without losing the validated product behavior.
-
-## Improve through real projects
-
-Product-Skills is intended to evolve from real usage rather than trying to define every rule upfront. Feedback from Product and Development teams should improve:
-
-- skills and prompts;
-- coding conventions and development rules;
-- the boundary between Product-generated and Dev-owned code;
-- the amount of frontend and backend code that can be safely reused.
+</details>
 
 ---
-
-# Reference
-
-- [`docs/HARNESS-ENGINEERING.md`](./docs/HARNESS-ENGINEERING.md) — harness behavior, context, memory, subagents, and verification
-- [`docs/TOOLS-AND-MCP.md`](./docs/TOOLS-AND-MCP.md) — capability bootstrap, local tools, remote integrations, authentication, and approvals
-- [`docs/RUNTIME-COMPATIBILITY.md`](./docs/RUNTIME-COMPATIBILITY.md) — runtime compatibility and repository-specific configuration
-- [`skills/`](./skills/) — canonical reusable capability library
-- [`rules/engineering.md`](./rules/engineering.md) — engineering invariants and quality expectations
-
-## Repository map
-
-```text
-AGENTS.md           shared harness instructions
-skills/             reusable capabilities
-rules/              engineering/security/delivery invariants
-workflows/          short execution recipes
-subagents/          optional isolated roles
-memory/             memory for this Product-Skills repository
-templates/memory/   starter memory for product repositories
-hooks/              deterministic safety/ship checks
-scripts/            validation helpers
-docs/               deeper reference documentation
-```
-
-## Principles
-
-- Product-Skills is the repository harness around the AI Coding Agent.
-- Start from business intent.
-- Product owns functional intent; Development/SA owns system-level technical decisions.
-- Prioritize frontend reuse first; evaluate backend reuse from real project experience.
-- Let the harness select only the skills and tools the task needs.
-- Keep project context small and durable.
-- Verify before claiming success.
-- Improve the harness from real Product and Development feedback.
 
 ## License
 

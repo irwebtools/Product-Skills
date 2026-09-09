@@ -1,7 +1,7 @@
-# Claude Code configuration
+# Claude Code notes
 
-Canonical skills remain in `/skills` and shared behavior remains in `/AGENTS.md`.
+Canonical skills remain in `/skills`. Entry guidance remains in `CLAUDE.md` / `AGENTS.md`.
 
-Claude Code project-scoped MCP servers use the native root-level `/.mcp.json` file. Run `/mcp` to review and authenticate GitHub, Vercel, and Supabase.
+Product-Skills as a public Cursor Plugin does **not** require Claude-specific MCP configuration.
 
-Keep `.claude/` for Claude-specific settings, rules, or role wrappers only when needed. Do not duplicate canonical skill instructions here.
+If you use Claude Code separately, connect only the tools needed for the current outcome.

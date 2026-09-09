@@ -1,0 +1,18 @@
+name: product-definition
+purpose: Produce a feature brief Product and Development can execute without guessing intent.
+trigger:
+  - product-definition
+  - feature brief
+  - scope
+inputs:
+  - Discovery outputs
+  - Known business rules and constraints
+outputs:
+  - Feature brief
+  - Scope boundary
+  - Business rules summary
+  - Links to stories and acceptance
+dependencies:
+  - product/product-discovery
+verification:
+  - verification/README.md

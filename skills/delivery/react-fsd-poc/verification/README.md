@@ -1,0 +1,1 @@
+# react-fsd-poc verification

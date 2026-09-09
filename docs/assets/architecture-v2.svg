@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="300" viewBox="0 0 560 300" role="img" aria-labelledby="title desc">
-  <title id="title">Product-Skills harness overview</title>
-  <desc id="desc">Business intent enters an AI Coding Agent supported by the Product-Skills harness. The harness contains skills, context, rules, tools, and verification. The result is verified product work.</desc>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Product-Skills relationship</title>
+  <desc id="desc">Product intent flows through the Product-Skills harness and an AI Coding Agent to verified product work, then developer production.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
       <path d="M0 0 L10 5 L0 10 Z" fill="#596579"/>
     </marker>
   </defs>
-
-  <rect width="560" height="300" fill="#f7f6f2"/>
-
+  <rect width="420" height="420" fill="#f7f6f2"/>
   <g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" fill="#2d3142">
-    <text x="40" y="38" font-size="11" font-weight="700" letter-spacing="1.7" fill="#7a8399">PRODUCT-SKILLS</text>
-    <line x1="40" y1="52" x2="520" y2="52" stroke="#2d3142" stroke-opacity=".12"/>
+    <rect x="70" y="28" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="58" text-anchor="middle" font-size="16" font-weight="650">Product Intent</text>
+    <path d="M210 76V100" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
 
-    <text x="72" y="151" text-anchor="middle" font-size="16" font-weight="650">Business intent</text>
-    <path d="M132 145H166" stroke="#596579" stroke-width="1.35" fill="none" marker-end="url(#arrow)"/>
+    <rect x="70" y="100" width="280" height="48" rx="8" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.1"/>
+    <text x="210" y="130" text-anchor="middle" font-size="16" font-weight="700">Product-Skills Harness</text>
+    <path d="M210 148V172" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
 
-    <rect x="174" y="78" width="252" height="146" rx="10" fill="#fff7f2" stroke="#eb6c36" stroke-width="1.1"/>
-    <text x="194" y="104" font-size="10" font-weight="750" letter-spacing="1.4" fill="#eb6c36">HARNESS</text>
-    <text x="300" y="145" text-anchor="middle" font-size="20" font-weight="700">AI Coding Agent</text>
-    <line x1="202" y1="166" x2="398" y2="166" stroke="#2d3142" stroke-opacity=".10"/>
-    <text x="300" y="194" text-anchor="middle" font-size="13" font-weight="600" fill="#596579">Skills · Context · Rules · Tools · Verify</text>
+    <rect x="70" y="172" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="202" text-anchor="middle" font-size="16" font-weight="650">AI Coding Agent</text>
+    <path d="M210 220V244" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
 
-    <path d="M426 145H458" stroke="#596579" stroke-width="1.35" fill="none" marker-end="url(#arrow)"/>
-    <text x="502" y="142" text-anchor="middle" font-size="16" font-weight="650">Verified</text>
-    <text x="502" y="162" text-anchor="middle" font-size="16" font-weight="650">work</text>
+    <rect x="70" y="244" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="274" text-anchor="middle" font-size="16" font-weight="650">Verified Product Work</text>
+    <path d="M210 292V316" stroke="#596579" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
 
-    <text x="300" y="260" text-anchor="middle" font-size="12" font-weight="550" fill="#7a8399">Product-Skills is the repository harness around the agent</text>
+    <rect x="70" y="316" width="280" height="48" rx="8" fill="#ffffff" stroke="#2d3142" stroke-opacity=".14"/>
+    <text x="210" y="346" text-anchor="middle" font-size="16" font-weight="650">Developer Production</text>
   </g>
 </svg>

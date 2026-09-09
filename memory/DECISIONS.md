@@ -8,7 +8,7 @@ All reusable skill content lives under `/skills`. Runtime-specific directories m
 
 ## D-002 — Harness is cross-cutting, not a folder
 
-The harness is the combination of instructions, skills, context, memory, tools/MCP, execution behavior, subagents, guardrails, and verification.
+The harness is the combination of instructions, skills, context, memory, optional tools/MCP, execution behavior, agents, guardrails, and verification.
 
 ## D-003 — Fast path is default
 
@@ -29,3 +29,11 @@ Greenfield React follows Feature-Sliced Design v2.1. Start with `app/`, `pages/`
 ## D-007 — Product feature inventory tracks current capability truth
 
 For existing products, `memory/FEATURES.md` may track active product capabilities and intentional removals. Agents classify meaningful changes as `ADD`, `CHANGE`, `REMOVE`, or `NONE`, then update the inventory after verification. Product features are distinct from the FSD `features/` architectural layer.
+
+## D-008 — AI Product Engineering Platform
+
+Seven canonical lifecycle skills separate discovery, definition, experience, architecture, implementation, verification, and handoff. Prior skill paths remain compatible. New React prototypes use the five-layer profile; existing applications retain architecture unless migration is authorized. Platform checks are distinct from application evidence and production approval.
+
+## D-009 — product-skills skill platform
+
+Package identity is `product-skills` (branding remains Product-Skills). Canonical skills live under `skills/product/`, `skills/delivery/`, and `skills/quality/` using Agent Skill folders. Stack is React + TypeScript + FSD only; optional helpers may exist under `skills/optional/` and are not default Product capabilities. Agents discover capabilities via `manifest.yaml` and install via `install/`. Product-Skills is inspired by modern AI Agent Skill systems and is not a Superpowers fork.

@@ -1,6 +1,6 @@
 # Tools & MCP
 
-Product-Skills follows one rule: **the coding agent owns capability setup; PM/BA users should not need to understand MCP configuration.**
+Product-Skills follows one rule: **the coding agent owns capability setup; Product Team users should not need to understand MCP configuration.**
 
 The tool surface stays small, but required capabilities must be resolved before implementation starts.
 
@@ -15,7 +15,7 @@ Then:
 3. if a required remote capability is not authenticated or connected, request that connection immediately;
 4. wait only for the specific required connection;
 5. resume the same task automatically after connection;
-6. never ask the PM/BA to manually inspect settings or connect unrelated services.
+6. never ask the Product Team to manually inspect settings or connect unrelated services.
 
 Examples:
 
@@ -62,7 +62,7 @@ Preconfigured does not mean always used. Required-by-task does mean connected be
 
 Supabase is optional. For a frontend-only experience, mock data is usually faster.
 
-When a real backend is valuable, the coding agent may use Supabase MCP and CLI so the PM/BA does not have to write backend code or SQL manually. Speed does not remove the requirement for a reusable handoff.
+When a real backend is valuable, the coding agent may use Supabase MCP and CLI so the Product Team does not have to write backend code or SQL manually. Speed does not remove the requirement for a reusable handoff.
 
 Preserve durable backend assets in the repository:
 
@@ -88,9 +88,13 @@ Write-capable remote tools should be scoped to the smallest useful environment. 
 
 ## Runtime configuration
 
-- Claude Code: root `.mcp.json`.
-- OpenAI Codex: `.codex/config.toml`.
-- Cursor: `.cursor/mcp.json`.
-- Other coding agents: configure equivalent servers through their own native MCP/tool mechanism.
+The public Cursor Plugin does **not** ship MCP server configs.
 
-These files are thin runtime-specific configuration, not a definition of which AI coding agents Product-Skills supports.
+Optional local integrations may be configured by maintainers in their own environment when a task needs them:
+
+- Claude Code: project MCP config if you choose to add one locally
+- OpenAI Codex: local Codex MCP config if needed
+- Cursor: user/workspace MCP connections when a task requires them
+
+Do not commit access tokens.
+Do not treat MCP as required for Product Team workflows.

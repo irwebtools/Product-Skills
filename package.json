@@ -1,0 +1,21 @@
+{
+  "name": "product-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Turn Product Team requests into verified working changes with AI Coding (React + TypeScript + FSD).",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-plugin.mjs",
+    "validate:plugin": "node scripts/validate-plugin.mjs",
+    "validate:skills": "node scripts/validate-skills.mjs",
+    "check:encoding": "node scripts/check-encoding.mjs",
+    "check:security": "node scripts/check-security.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "check:fsd": "node scripts/check-fsd-boundary.mjs",
+    "test": "node --test scripts/tests/platform-checks.test.mjs",
+    "install:local-plugin": "node scripts/install-local-plugin.mjs",
+    "maintainer:install": "node install/install.mjs",
+    "maintainer:init": "node install/init.mjs",
+    "maintainer:bootstrap": "node install/bootstrap.mjs"
+  }
+}

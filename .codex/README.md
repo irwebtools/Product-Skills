@@ -1,7 +1,8 @@
 # Codex configuration
 
-Canonical skills remain in `/skills` and shared behavior remains in `/AGENTS.md`.
+Product-Skills does **not** ship required MCP servers.
 
-`.codex/config.toml` contains project-scoped MCP connections and write-approval defaults for trusted Codex projects.
+Optional integrations (GitHub, Vercel, Supabase, etc.) may be connected in your local Codex or Cursor environment when a specific task needs them.
 
-Keep other Codex-specific configuration or custom agent wrappers here only when needed. Do not duplicate canonical skill instructions.
+Do not commit access tokens.
+Do not treat external MCP as part of the core Product-Skills Cursor Plugin.

@@ -1,0 +1,41 @@
+{
+  "name": "product-skills",
+  "version": "1.0.0",
+  "description": "Product Team focused Cursor Plugin: describe WHAT, AI Coding determines HOW, verifies changes, and prepares a Preview when supported.",
+  "author": {
+    "name": "irwebtools"
+  },
+  "homepage": "https://github.com/irwebtools/Product-Skills",
+  "repository": "https://github.com/irwebtools/Product-Skills",
+  "license": "MIT",
+  "keywords": [
+    "product",
+    "product-team",
+    "ai-coding",
+    "refactoring",
+    "react",
+    "typescript",
+    "fsd",
+    "feature-sliced-design",
+    "verification",
+    "frontend-architecture"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": [
+    "skills/product/project-analysis",
+    "skills/product/product-discovery",
+    "skills/product/product-definition",
+    "skills/product/user-story",
+    "skills/product/acceptance-criteria",
+    "skills/product/ux-flow",
+    "skills/product/validation",
+    "skills/delivery/architecture-decision",
+    "skills/delivery/react-fsd-poc",
+    "skills/delivery/developer-handoff",
+    "skills/quality/verification",
+    "skills/quality/security-review"
+  ],
+  "rules": "rules",
+  "agents": "agents",
+  "commands": "commands"
+}

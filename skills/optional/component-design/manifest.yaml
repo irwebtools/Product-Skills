@@ -1,0 +1,17 @@
+name: component-design
+purpose: Place UI in pages/features/entities/shared correctly without business dumping folders.
+trigger:
+  - component-design
+  - shared/ui
+  - feature UI
+inputs:
+  - UX states
+  - FSD location
+  - Existing design system
+outputs:
+  - Component placement plan
+  - Public API notes
+dependencies:
+  - delivery/architecture-decision
+verification:
+  - verification/README.md
